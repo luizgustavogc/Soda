@@ -1,0 +1,114 @@
+<html>
+<head>
+<script>
+
+function ps()
+{
+	for (var prop in window)
+	{
+		if(prop == "teste")
+		{
+			alert(prop);
+			alert(teste.getClass());
+			delete teste.getClass;
+			teste.getClass = function() {};
+			alert(teste.getClass);
+		}
+	}
+};
+function ps2()
+{
+	teste.teste1(1,2, function(response) { alert(JSON.stringify(response)); });
+	//alert(teste.teste1(1,2));
+};
+
+function ps3()
+{
+	//alert("mu: " + soda);
+	alert(teste.getClass());
+};
+
+function demo1()
+{
+	droid.logMessageError();
+}
+
+function demo2()
+{
+	
+	var message = prompt('Write something and press ENTER. Your message will be visible in logcat.', '');
+	
+	droid.logCustomMessageError(message);
+	
+}
+
+function demo3()
+{
+	var res = droid.sum(11, 11);
+
+	document.getElementById('sumResult1').innerHTML = res.result;
+}
+
+function demo4()
+{
+
+	var number1 = prompt('Type number 1', '');
+	var number2 = prompt('Type number 2', '');
+
+	var res = droid.sumStr(number1, number2);
+	
+	if(res.success)
+	{
+		document.getElementById('sumResult2').innerHTML = res.result;
+	}
+	else
+	{
+		alert(res.result);
+	}
+
+}
+
+function demo5()
+{
+	var res = droid.stringFormat(2015, 'Luiz Gustavo Gesswein Cruz');
+	alert(res.result);
+
+}
+
+function demo6()
+{
+	droid.showToast('Hello World!');
+}
+
+function demo7()
+{
+	
+	var res = droid.sum('1', '2');
+	if(!res.success)
+	{
+		alert(res.result);
+	}
+}
+
+</script>
+</head>
+<body>
+<a href="javascript:demo1();">Demo 1</a>
+<br>Add a message in logcat.<br>
+<a href="javascript:demo2();">Demo 2</a>
+<br>Add a message in logcat (input from JS).<br>
+<a href="javascript:demo3();">Demo 3</a>
+<br>Sum two numbers.<br>
+Sum result: <span id="sumResult1">?</span><br>
+<a href="javascript:demo4();">Demo 4</a>
+<br>Sum two numbers (input from JS).
+<br>Sum result: <span id="sumResult2">?</span><br>
+<a href="javascript:demo5();">Demo 5</a>
+<br>Create a string from JavaScript values.<br>
+<a href="javascript:demo6();">Demo 6</a>
+<br>Show a Toast.<br>
+<a href="javascript:demo7();">Demo 7</a>
+<br>Try to sum two strings in a function that wants two integers (Demo 3 with error).<br>
+</body>
+
+</html>
