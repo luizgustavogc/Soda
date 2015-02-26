@@ -2,32 +2,6 @@
 <head>
 <script>
 
-function ps()
-{
-	for (var prop in window)
-	{
-		if(prop == "teste")
-		{
-			alert(prop);
-			alert(teste.getClass());
-			delete teste.getClass;
-			teste.getClass = function() {};
-			alert(teste.getClass);
-		}
-	}
-};
-function ps2()
-{
-	teste.teste1(1,2, function(response) { alert(JSON.stringify(response)); });
-	//alert(teste.teste1(1,2));
-};
-
-function ps3()
-{
-	//alert("mu: " + soda);
-	alert(teste.getClass());
-};
-
 function demo1()
 {
 	droid.logMessageError();
